@@ -20,7 +20,7 @@ export const forEach = (obj, iterator) => {
     obj.forEach(iterator);
   } else if (getType(obj) === 'object') {
     Object.keys(obj).forEach(k => {
-      iterator.apply(null, obj[k], k);
+      iterator.call(null, obj[k], k);
     });
   } else {
     throw new Error(`${obj} is not a iterable object`);
