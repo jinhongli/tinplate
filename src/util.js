@@ -13,7 +13,7 @@ const esacapeMap = {
 };
 
 export const escapeHTML = str =>
-  str.replace(/[&<>'"]/g, tag => esacapeMap[tag] || tag);
+  str.replace(/[&<>'"]/g, tag => esacapeMap[tag]);
 
 export const forEach = (obj, iterator) => {
   if (getType(obj) === 'array') {
