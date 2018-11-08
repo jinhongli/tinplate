@@ -16,6 +16,8 @@ const syntax = [
 export const compile = tpl => {
   let code = `var html = "";with(data){`;
   const tokens = tpl
+    .trim()
+    .replace(/[\n\r]/g, '')
     .split(delimiter)
     .filter(Boolean)
     .map(t => {
@@ -26,7 +28,6 @@ export const compile = tpl => {
       return `html+='${t}';`;
     });
   code += tokens.join('') + `}return html.trim().replace(/>[\\n\\r\\s]*?</g, '><')`;
-  console.log(code);
   const render = new Function('util', 'data', code);
   return render.bind(null, {
     escape: escapeHTML,
