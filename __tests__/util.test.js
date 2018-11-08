@@ -23,6 +23,10 @@ describe('util.escapeHTML', () => {
     const fakeWords = 'dolor maiores dolores';
     expect(escapeHTML(fakeWords)).toBe(fakeWords);
   });
+
+  test(`should not escape other type of data`, () => {
+    expect(escapeHTML(1)).toEqual(1);
+  });
 });
 
 describe('util.forEach', () => {
