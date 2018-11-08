@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rollup -c --environment production",
     "watch": "rollup -c -w --environment production",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": "https://github.com/Jinhongli/tinyplate.git",
   "author": "Jinhongli <jhl211@163.com>",

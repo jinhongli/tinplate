@@ -27,6 +27,6 @@ export const forEach = (obj, iterator) => {
   }
 };
 
-export const slice = (s, n) => s.trim().slice(n);
+export const slice = (s, n) => s.slice(n).trim();
 
 export const startOf = (s, k) => s.indexOf(k) === 0;
