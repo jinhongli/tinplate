@@ -1,6 +1,8 @@
 # Tinplate
 
-A tiny template engine, less than 1KB, just enough.
+A tiny js template engine, < 1KB, just enough.
+
+![](./assets/version.svg) ![](./assets/coverage.svg)
 
 ## Syntax
 
