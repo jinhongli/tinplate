@@ -12,10 +12,10 @@ describe('render', () => {
   test('=: should render variable correctly', () => {
     const tpl = '<h1 id="hello">Hello {{= name}}</h1>';
     document.body.innerHTML = render(tpl, {
-      name: 'Tinyplate',
+      name: 'Tinplate',
     });
     expect(document.querySelector('#hello').innerHTML).toEqual(
-      'Hello Tinyplate'
+      'Hello Tinplate'
     );
   });
 
@@ -66,11 +66,11 @@ describe('render', () => {
 </h1>
     `;
     document.body.innerHTML = render(tpl, {
-      foo: 'Tinyplate',
+      foo: 'Tinplate',
     });
     const $hello = document.querySelector('#hello');
     expect($hello).toBeTruthy;
-    expect($hello.innerHTML.trim()).toEqual('Hello Tinyplate');
+    expect($hello.innerHTML.trim()).toEqual('Hello Tinplate');
   });
 
   test('else: should render else content when not satisfied', () => {

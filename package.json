@@ -1,13 +1,13 @@
 {
-  "name": "tinyplate",
+  "name": "tinplate",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "rollup -c --environment production",
     "watch": "rollup -c -w --environment production",
     "test": "jest --coverage"
   },
-  "repository": "https://github.com/Jinhongli/tinyplate.git",
+  "repository": "https://github.com/Jinhongli/tinplate.git",
   "author": "Jinhongli <jhl211@163.com>",
   "license": "MIT",
   "devDependencies": {
