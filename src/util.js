@@ -4,7 +4,7 @@ const getType = obj =>
     .slice(8, -1)
     .toLowerCase();
 
-const esacapeMap = {
+const escapeMap = {
   '&': '&amp;',
   '<': '&lt;',
   '>': '&gt;',
@@ -14,7 +14,7 @@ const esacapeMap = {
 
 export const escapeHTML = str =>
   getType(str) === 'string'
-    ? str.replace(/[&<>'"]/g, tag => esacapeMap[tag])
+    ? str.replace(/[&<>'"]/g, tag => escapeMap[tag])
     : str;
 
 export const forEach = (obj, iterator) => {
