@@ -12,12 +12,12 @@ const esacapeMap = {
   '"': '&quot;',
 };
 
-const escapeHTML = str =>
+export const escapeHTML = str =>
   getType(str) === 'string'
     ? str.replace(/[&<>'"]/g, tag => esacapeMap[tag])
     : str;
 
-const forEach = (obj, iterator) => {
+export const forEach = (obj, iterator) => {
   if (getType(obj) === 'array') {
     obj.forEach(iterator);
   } else if (getType(obj) === 'object') {
@@ -29,13 +29,6 @@ const forEach = (obj, iterator) => {
   }
 };
 
-const slice = (s, n) => s.slice(n).trim();
+export const slice = (s, n) => s.slice(n).trim();
 
-const startOf = (s, k) => s.indexOf(k) === 0;
-
-module.exports = {
-  escapeHTML,
-  forEach,
-  slice,
-  startOf,
-};
+export const startOf = (s, k) => s.indexOf(k) === 0;
