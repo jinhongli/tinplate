@@ -1,4 +1,4 @@
-# Tinyplate
+# Tinplate
 
 A tiny template engine, less than 1KB, just enough.
 
