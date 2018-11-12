@@ -1,4 +1,4 @@
-import { escapeHTML, forEach, slice, startOf } from './util';
+const { escapeHTML, forEach, slice, startOf } = require('./util');
 
 const delimiter = /{{\s*([^}]+)\s*}}/;
 
@@ -13,7 +13,7 @@ const syntax = [
   ['@', t => `html+=${slice(t, 1)};`],
 ];
 
-export const compile = tpl => {
+const compile = tpl => {
   let code = `var html = "";with(data){`;
   const tokens = tpl
     .trim()
@@ -27,7 +27,8 @@ export const compile = tpl => {
       }
       return `html+='${t}';`;
     });
-  code += tokens.join('') + `}return html.trim().replace(/>[\\n\\r\\s]*?</g, '><')`;
+  code +=
+    tokens.join('') + `}return html.trim().replace(/>[\\n\\r\\s]*?</g, '><')`;
   const render = new Function('util', 'data', code);
   return render.bind(null, {
     escape: escapeHTML,
@@ -35,4 +36,9 @@ export const compile = tpl => {
   });
 };
 
-export const render = (tpl, data) => compile(tpl)(data);
+const render = (tpl, data) => compile(tpl)(data);
+
+module.exports = {
+  compile,
+  render,
+};
